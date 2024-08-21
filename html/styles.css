@@ -1,0 +1,132 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bahnschrift Condensed', sans-serif;
+    background-color: transparent;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#skill-check-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    width: 15vw;
+    height: 6vh;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 1.5vh;
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#skill-check-container.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+#skill-check-container.success {
+    animation: successPop 0.5s ease-in-out;
+}
+
+#skill-check-container.failure {
+    animation: failureShake 0.4s ease-in-out;
+}
+
+#skill-check-container.hide {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+}
+
+@keyframes successPop {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 1.5vh rgba(108, 37, 190, 0.4);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        box-shadow: 0 0 2vh rgba(108, 37, 190, 0.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 1.5vh rgba(108, 37, 190, 0.4);
+    }
+}
+
+@keyframes failureShake {
+    0% { transform: translate(-50%, -50%) translateX(0); }
+    25% { transform: translate(-50%, -50%) translateX(-0.6vw); }
+    50% { transform: translate(-50%, -50%) translateX(0.6vw); }
+    75% { transform: translate(-50%, -50%) translateX(-0.6vw); }
+    100% { transform: translate(-50%, -50%) translateX(0); }
+}
+
+#skill-check-bar {
+    height: 2vh;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.8vh;
+    box-shadow: 0 0 0.5vh rgba(0, 0, 0, 0.3);
+}
+
+#success-zone {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(135deg, #6c25be, #472172);
+    top: 0;
+    transition: left 0.5s ease;
+    border-radius: 0.8vh;
+    box-shadow: 0 0 0.8vh rgba(108, 37, 190, 0.7);
+}
+
+#indicator {
+    position: absolute;
+    height: 100%;
+    width: 4%;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    border-radius: 0.8vh;
+    transition: left 0.01s linear;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#button-text {
+    color: white;
+    font-size: 1.5vh;
+    margin-bottom: 0.5vh;
+    letter-spacing: 0.1vw;
+    text-shadow: 0 0 0.3vh rgba(0, 0, 0, 0.5);
+}
+
+#button-text .key {
+    color: #6c25be;
+    font-weight: 999;
+}
+
+.success {
+    background: linear-gradient(135deg, #6c25be, #472172);
+}
+
+.failure {
+    background: linear-gradient(135deg, #ff4c4c, #c62828);
+}

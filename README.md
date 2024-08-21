@@ -1,9 +1,11 @@
 ![fxskillcheck_thumbnail](https://github.com/user-attachments/assets/e5a87f99-420d-477b-8f53-7b141c29f237)
 
 **|Preview|** 
-Click [here]() to see a preview
+
+Click [here](https://youtu.be/lPUXqyyXWQM) to see a preview
 
 **|Information|** 
+
 A skill check system that adds interactive challenges with customizable difficulty levels and control settings.
 
 **Settings:**
@@ -16,6 +18,7 @@ A skill check system that adds interactive challenges with customizable difficul
 * `buttons (table)`: List of keys that can be pressed during the skill check.
 
 **|How to use|**
+
 Trigger this export: `exports['fx_skillcheck']:startSkillCheck()` It can be used anywhere, in any script.
 
 Example usage:
@@ -28,6 +31,3 @@ else
     print('Skill check failed.')
 end
 ```
-
-**|Download (FREE)|**
-Get this resource on [Tebex]() or [GitHub]()
